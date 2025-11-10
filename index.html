@@ -8,58 +8,6 @@
 </head>
 
 
-<!-- Hit count code -->
-	
- <!-- Google Analytics (GA4) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-111"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-111'); // Replace with your GA4 Measurement ID
-  </script>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 80px;
-      background: #f9fbff;
-    }
-    .counter-box {
-      display: inline-block;
-      padding: 20px 40px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
-    .count {
-      font-size: 48px;
-      color: #2563eb;
-      font-weight: bold;
-    }
-  </style>
-</head>
-
-<body>
-  <h1>Welcome to My Website</h1>
-  <div class="counter-box">
-    <div>Website Hit Count:</div>
-    <div class="count" id="hitCount">Loading...</div>
-  </div>
-
-  <script>
-    // Simulate a hit counter until GA4 Data API is integrated
-    let count = localStorage.getItem('fakeHitCount') || 0;
-    count++;
-    localStorage.setItem('fakeHitCount', count);
-    document.getElementById('hitCount').textContent = count;
-  </script>
-</body>
-
-
-
-
 
 
 
