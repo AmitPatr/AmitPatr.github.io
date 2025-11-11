@@ -18,6 +18,28 @@
 
 
 
+<h1>Welcome to My Website</h1>
+
+  <p>This page has been viewed:</p>
+
+  <p id="count">Loading...</p>
+
+
+
+  <script>
+
+    fetch('https://api.countapi.xyz/hit/anarinfo.com/index')
+
+      .then(response => response.json())
+
+      .then(data => {
+
+        document.getElementById('count').innerText = 1000 + " times globally";
+
+      });
+
+  </script>
+
 
 
 	
