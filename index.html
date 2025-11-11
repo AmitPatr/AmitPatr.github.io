@@ -15,21 +15,7 @@
 	
 <body>
 
- <h1>Welcome to My Website</h1>
 
-  <p>This page has been viewed:</p>
-
-  <p id="count">Loading...</p>
-
-
-<script>
-	document.getElementById('count').innerText = 100+" times globally";
-  fetch('https://api.countapi.xyz/hit/amitpatr.github.io/index.html')
-  .then(response => response.json())
-  .then(data => {
-      document.getElementById('count').innerText = 100+" times globally";
-  });
-</script>
 
 
 
