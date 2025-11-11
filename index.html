@@ -7,14 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<script>
-	document.getElementById('count').innerText = 100+" times globally";
-  fetch('https://api.countapi.xyz/hit/amitpatr.github.io/index.html')
-  .then(response => response.json())
-  .then(data => {
-      document.getElementById('count').innerText = 100+" times globally";
-  });
-</script>
+
 
 
 
@@ -29,7 +22,14 @@
   <p id="count">Loading...</p>
 
 
-
+<script>
+	document.getElementById('count').innerText = 100+" times globally";
+  fetch('https://api.countapi.xyz/hit/amitpatr.github.io/index.html')
+  .then(response => response.json())
+  .then(data => {
+      document.getElementById('count').innerText = 100+" times globally";
+  });
+</script>
 
 
 
