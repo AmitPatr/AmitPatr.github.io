@@ -8,6 +8,7 @@
 </head>
 
 <script>
+	document.getElementById('count').innerText = 100+" times globally";
   fetch('https://api.countapi.xyz/hit/anarinfo.com/index')
   .then(response => response.json())
   .then(data => {
