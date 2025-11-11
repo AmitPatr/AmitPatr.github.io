@@ -7,7 +7,13 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-
+<script>
+  fetch('https://api.countapi.xyz/hit/anarinfo.com/')
+  .then(response => response.json())
+  .then(data => {
+      document.getElementById('counter').innerText = data.value;
+  });
+</script>
 
 
 
@@ -23,19 +29,7 @@
 
 
 
-  <script>
 
-    fetch('https://anarinfo.com/index')
-
-      .then(response => response.json())
-
-      .then(data => {
-
-        document.getElementById('count').innerText = data.value + " times globally";
-
-      });
-
-  </script>
 
 
 
@@ -45,13 +39,7 @@
 	 
 	  
 	  <p> <span id="counter"></span></p>
-<script>
-  fetch('https://www.anarinfo.com/')
-  .then(response => response.json())
-  .then(data => {
-      document.getElementById('counter').innerText = data.value;
-  });
-</script>
+
 
  <!--   <nav> -->
       <ul>
