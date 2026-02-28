@@ -184,4 +184,110 @@
     <p>© 2025 ANAR. All rights reserved.</p>
   </footer>
 </body>
+
+
+
+
+
+
+
+
+
+
+<head>
+    <title>Table Pagination</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .pagination {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .pagination button {
+            padding: 5px 10px;
+            margin: 2px;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Student Table</h2>
+
+<table id="myTable">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Sample Data -->
+        <script>
+            for (let i = 1; i <= 50; i++) {
+                document.write("<tr><td>" + i + "</td><td>Student " + i + "</td></tr>");
+            }
+        </script>
+    </tbody>
+</table>
+
+<div class="pagination" id="pagination"></div>
+
+<script>
+    const rowsPerPage = 10;
+    const table = document.getElementById("myTable");
+    const tbody = table.querySelector("tbody");
+    const rows = tbody.querySelectorAll("tr");
+    const totalPages = Math.ceil(rows.length / rowsPerPage);
+    const paginationDiv = document.getElementById("pagination");
+
+    function showPage(page) {
+        rows.forEach((row, index) => {
+            row.style.display =
+                (index >= (page - 1) * rowsPerPage && index < page * rowsPerPage)
+                ? ""
+                : "none";
+        });
+
+        document.querySelectorAll(".pagination button").forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        paginationDiv.children[page - 1].classList.add("active");
+    }
+
+    function createPagination() {
+        for (let i = 1; i <= totalPages; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = i;
+            btn.addEventListener("click", () => showPage(i));
+            paginationDiv.appendChild(btn);
+        }
+    }
+
+    createPagination();
+    showPage(1);
+</script>
+
+</body>
+
+
+	
+
+	
 </html>
