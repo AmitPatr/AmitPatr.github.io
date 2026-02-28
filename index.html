@@ -238,11 +238,33 @@
     </thead>
     <tbody>
         <!-- Sample Data -->
-        <script>
+      <!--
+		<script>
             for (let i = 1; i <= 50; i++) {
                 document.write("<tr><td>" + i + "</td><td>Student " + i + "</td></tr>");
             }
         </script>
+		 -->
+		<script>
+	const users = [ { id: 1, name: "Amit", profileUrl: "https://example.com/amit" },
+			{ id: 2, name: "Rahul", profileUrl: "https://example.com/rahul" },
+			{ id: 3, name: "Priya", profileUrl: "https://example.com/priya" } ]; 
+	
+	const tbody = document.querySelector("#userTable tbody"); 
+	users.forEach(user => { const row = document.createElement("tr"); // ID Cell 
+	const idCell = document.createElement("td"); 
+	idCell.textContent = user.id; // Name Cell 
+	const nameCell = document.createElement("td"); 
+	nameCell.textContent = user.name; // Hyperlink Cell 
+	const linkCell = document.createElement("td"); 
+	const anchor = document.createElement("a"); 
+	anchor.href = user.profileUrl; 
+	anchor.textContent = "View Profile"; 
+	anchor.target = "_blank"; // open in new tab 
+	anchor.rel = "noopener noreferrer"; // security best practice 
+	linkCell.appendChild(anchor); 
+	row.append(idCell, nameCell, linkCell); tbody.appendChild(row); });
+		</script>
     </tbody>
 </table>
 
